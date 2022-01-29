@@ -1,0 +1,86 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-size: contain;
+    background-image: url("img/world.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-color: lavenderblush;
+}
+
+.container {
+    max-width: 900px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+header {
+}
+
+.main {
+    position: relative;
+    align-items: center;
+}
+
+.title{
+    font: 3em/40px urbanist;
+    text-align: center;
+    margin-top: 100px;
+    padding: 45px 0 45px 0;
+    background-color: #e17753;
+    color: white;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*grid-auto-rows: minmax(100px, 250px);*/
+    grid-gap: 30px;
+}
+
+.element-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+
+.element-item__front,
+.element-item__back {
+    position: absolute;
+    font: 1.5em/18px lexend, sans-serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.element-item__front {
+    backface-visibility: hidden;
+    background-color: darksalmon;
+    z-index: 5;
+}
+
+.element-item__back {
+    background-color: #e17753;
+    z-index: 2;
+    transform: rotateY(180deg);
+}
+
+.more_container:hover .element-container {
+    transform: rotateY(180deg);
+}
+
+.more_container {
+    /*backface-visibility: hidden;*/
+    perspective: 1000px;
+}
